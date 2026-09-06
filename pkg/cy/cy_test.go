@@ -16,9 +16,12 @@ import (
 )
 
 func setup(t *testing.T) (*Cy, func(geom.Size) *Client) {
+	shell, err := exec.LookPath("bash")
+	require.NoError(t, err)
+
 	ctx := context.Background()
 	cy, err := Start(ctx, Options{
-		Shell: "/bin/bash",
+		Shell: shell,
 	})
 	require.NoError(t, err)
 
@@ -51,7 +54,7 @@ func TestScopes(t *testing.T) {
 	cmd, err := cmd.New(
 		server.Ctx(),
 		stream.CmdOptions{
-			Command: "/bin/bash",
+			Command: server.defaultParams.DefaultShell(),
 		},
 		params.New(),
 		server.timeBinds,

@@ -2,14 +2,20 @@ package cy
 
 import (
 	"context"
+	"os/exec"
 
 	"github.com/cfoust/cy/pkg/geom"
 )
 
 func NewTestServer() (*Cy, func(geom.Size) (*Client, error), error) {
+	shell, err := exec.LookPath("bash")
+	if err != nil {
+		return nil, nil, err
+	}
+
 	ctx := context.Background()
 	cy, err := Start(ctx, Options{
-		Shell:     "/bin/bash",
+		Shell:     shell,
 		SkipInput: true,
 		StateDir:  "",
 	})
