@@ -244,7 +244,7 @@ github.com/muesli/termenv
 github.com/olekukonko/tablewriter
 # github.com/onsi/gomega v1.37.0
 ## explicit; go 1.23.0
-# github.com/petermattis/goid v0.0.0-20240813172612-4fcff4a6cae7
+# github.com/petermattis/goid v0.0.0-20250813065127-a731cc31b4fe
 ## explicit; go 1.17
 github.com/petermattis/goid
 # github.com/pmezard/go-difflib v1.0.0
@@ -264,7 +264,7 @@ github.com/rs/zerolog/log
 # github.com/sahilm/fuzzy v0.1.1
 ## explicit
 github.com/sahilm/fuzzy
-# github.com/sasha-s/go-deadlock v0.3.5
+# github.com/sasha-s/go-deadlock v0.3.9
 ## explicit
 github.com/sasha-s/go-deadlock
 # github.com/segmentio/golines v0.12.2
